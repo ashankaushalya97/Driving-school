@@ -42,14 +42,14 @@
 </head>
 <body>
     <div class="login">
-        <img src="img/icons/i3.png" alt="" class="avatar">
+        <img src="img/user.png" alt="" class="avatar">
             <h1>Login Here</h1>
             <form method="post" action="index.php">
                 <p>Username</p>
                 <input type="text" name="username"  placeholder="Username">
                 <p>Password</p>
                 <input type="password" name="password" placeholder="Password">
-                <input type="submit" name="login_btn" value="Login">
+                <input type="submit" name="login_btn" value="Login" action="index.php">
                 <a href="#">Lost your password?</a><br>
                 <a href="#">Don't have an account?</a>
             </form>
