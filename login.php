@@ -1,4 +1,7 @@
 <?php 
+    require_once('inc/connection.php');
+?>
+<?php 
    /*  session_start();
     //db connection
     require('db.php');

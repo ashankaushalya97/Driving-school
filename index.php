@@ -1,3 +1,6 @@
+<?php 
+    require_once('inc/connection.php');
+?>
 
 <!doctype html>
 <html lang="en">
