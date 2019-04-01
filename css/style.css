@@ -93,3 +93,9 @@ body {
   .breadcrumb a {
       color: #333333;
   }
+  .well {
+    background-color: rgb(219, 219, 219);
+    height: 130px;
+    padding-left: 5px;
+    padding-top: 20px;
+  }
