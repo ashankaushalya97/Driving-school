@@ -13,7 +13,7 @@
     
     
 
-    <title>DMS | Dashboard </title>
+    <title>DMS | Payments </title>
   </head>
   <body>
 
@@ -65,7 +65,7 @@
         <section id="breadcrumb">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="active">Dashboard</li>
+                    <li class="active">Payments</li>
                 </ol>
             </div>
         </section>
@@ -75,12 +75,12 @@
                 <div class="row">
                     <div class="col-md-3">
                             <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action active main-color-bg"><i class="far fa-credit-card"></i> Dashboard</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
+                                    <a href="index.php" class="list-group-item list-group-item-action active main-color-bg"><i class="far fa-credit-card"></i> Dashboard</a>
+                                    <a href="schedule.php" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
+                                    <a href="students.php" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
+                                    <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
+                                    <a href="fleet.php" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
+                                    <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
                                                     
                                   </div> 
                     </div>
@@ -89,7 +89,70 @@
                                     <div class="panel-heading main-color-bg">
                                         <h4 class="panel-title">Payments</h4>
                                     </div>
-                                    
+                                    <br>
+                                    <div>
+                        <form >
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-3">
+                                    <label for="cmbCreditSupplier">Student ID</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-5">
+                                    <div class="dropdown" id="cmbCreditSupplier">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropDownCreditSupplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Supplier</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropDownCreditSupplier" id="creditsupplierList">
+                                            <p class="dropdown-item" >Student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-3">
+                                    <label for="cmbCtype">Credit Type</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-5">
+                                    <div class="dropdown" id="cmbCtype">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropDownCreditType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Credit Type</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropDownCreditType" id="credittypeList">
+                                            <p class="dropdown-item" >Credit Type</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-3">
+                                    <label for="txtAmount">Amount</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-5">
+                                    <input class="form-control" type="text" name="txtAmount" id="txtAmount" placeholder="Amount">
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-3 col-md-4"></div>
+                                <div class="col-6 col-md-4">
+                                    <button type="button" id="btnAddCredit" class="btn btn-success">Submit</button>
+                                    <button type="button" class="btn btn-light">Reset</button>
+                                </div>
+                                <div class="col-3 col-md-4"></div>
+                            </div>
+                            <br>
+                            <br>
+                        </form>
+                    </div>
                                     
                                     
                                   </div>

@@ -75,14 +75,14 @@
                 <div class="row">
                     <div class="col-md-3">
                             <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action active main-color-bg"><i class="far fa-credit-card"></i> Dashboard</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
-                                    <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
-                                                    
-                                  </div> 
+                                <a href="index.php" class="list-group-item list-group-item-action active main-color-bg"><i class="far fa-credit-card"></i> Dashboard</a>
+                                <a href="schedule.php" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
+                                <a href="students.php" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
+                                <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
+                                <a href="fleet.php" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
+                                <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
+                                                        
+                            </div> 
                     </div>
                     <div class="col-md-9">
                             <div class="panel panel-default">
