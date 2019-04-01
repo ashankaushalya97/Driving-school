@@ -13,7 +13,7 @@
     
     
 
-    <title>DMS | Dashboard </title>
+    <title>DMS | Fleet </title>
   </head>
   <body>
 
@@ -65,7 +65,7 @@
         <section id="breadcrumb">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="active">Dashboard</li>
+                    <li class="active">Fleet</li>
                 </ol>
             </div>
         </section>
