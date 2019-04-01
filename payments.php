@@ -80,39 +80,17 @@
                                     <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
                                     <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
                                     <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
-                                    <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
+                                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
                                                     
                                   </div> 
                     </div>
                     <div class="col-md-9">
                             <div class="panel panel-default">
                                     <div class="panel-heading main-color-bg">
-                                        <h4 class="panel-title">Overview</h4>
+                                        <h4 class="panel-title">Payments</h4>
                                     </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-2"></div>
-                                            <div class="col-md-3">
-                                                <div class="well">
-                                                    <h2><i class="fas fa-user"></i>20</h2>
-                                                    <h4>Students</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                    <div class="well">
-                                                        <h2><i class="fas fa-user"></i>20</h2>
-                                                        <h4>Students</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="well">
-                                                            <h2><i class="fas fa-user"></i>20</h2>
-                                                            <h4>Instructors</h4>
-                                                        </div>
-                                                    </div>
-                                        
-                                        </div>
-                                    </div>
+                                    
+                                    
                                     
                                   </div>
                     </div>

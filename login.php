@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Garbage Managemnet System</title>
+    <title>Auto Driving School</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -52,7 +52,7 @@
                 <input type="text" name="username"  placeholder="Username">
                 <p>Password</p>
                 <input type="password" name="password" placeholder="Password">
-                <input type="submit" name="login_btn" value="Login" action="index.php">
+                <input type="submit" name="login_btn" value="Login" >
                 <a href="#">Lost your password?</a><br>
                 <a href="#">Don't have an account?</a>
             </form>
