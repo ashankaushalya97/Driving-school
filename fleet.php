@@ -75,11 +75,11 @@
                 <div class="row">
                     <div class="col-md-3">
                             <div class="list-group">
-                                <a href="index.php" class="list-group-item list-group-item-action active main-color-bg"><i class="far fa-credit-card"></i> Dashboard</a>
+                                <a href="index.php" class="list-group-item list-group-item-action "><i class="far fa-credit-card"></i> Dashboard</a>
                                 <a href="schedule.php" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
                                 <a href="students.php" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
                                 <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
-                                <a href="fleet.php" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
+                                <a href="fleet.php" class="list-group-item list-group-item-action active main-color-bg"><i class="fas fa-car"></i> Fleet</a>
                                 <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
                                                         
                             </div> 
@@ -87,38 +87,61 @@
                     <div class="col-md-9">
                             <div class="panel panel-default">
                                     <div class="panel-heading main-color-bg">
-                                        <h4 class="panel-title">Overview</h4>
+                                        <h4 class="panel-title">Light weight vehicles</h4>
                                     </div>
                                     <div class="panel-body">
                                     <br>
                                     <div class="container">
                                     
                                         <div class="row">
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-3">
-                                                <div class="well dash-box">
-                                                    <h2 class="text-center"><i class="fas fa-user"> </i> 55</h2>
-                                                    <h4 class="text-center">Students</h4>
-                                                </div>
+                                            <!-- <div class="col-md-2"></div> -->
+                                            <div class="col-md-3 text-center">
+                                                <div class="well dash-box" style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
+                                                    <h2 class="text-center"><img src="img/f1.jpg" class="img-thumbnail"></h2>
+                                                    <h5 class="text-center">Mitsubishi Lancer Evolution IX</h5>
+                                                    <button type="button" class="btn btn-primary btn-sm ">View Details</button>
                                             </div>
-                                            <div class="col-md-3">
-                                                    <div class="well dash-box">
-                                                        <h2 class="text-center"><i class="fas fa-money-bill-wave"></i> 500,000</h2>
-                                                        <h4 class="text-center">This month income</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                        <div class="well dash-box">
-                                                            <h2 class="text-center"><i class="fas fa-chalkboard-teacher"></i> 12</h2>
-                                                            <h4 class="text-center">Instructors</h4>
-                                                        </div>
-                                                    </div>
-                                        
+                                            
+
+                                         </div>
+                                         <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="well dash-box" style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
+                                                    <h2 class="text-center"><img src="img/f2.jpg" class="img-thumbnail"></h2>
+                                                    <h5 class="text-center">Toyota Supra MK4</h5>
+                                                    <button type="button" class="btn btn-primary btn-sm ">View Details</button>
+                                            </div>
+                                            
+
+                                         </div>
+                                         <div class="row">
+                                            <div class="col-md-5"></div>
+                                            <div class="col-md-3 text-center">
+                                                <div class="well dash-box" style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
+                                                    <h2 class="text-center"><img src="img/f4.jpg" class="img-thumbnail"></h2>
+                                                    <h5 class="text-center">Nissan Skyline GT-R R34</h5>
+                                                    <button type="button" class="btn btn-primary btn-sm ">View Details</button>
+                                            </div>
+                                            
+
+                                         </div>
                                     </div>
                                         </div>
                                     </div>
                                     
                                   </div>
+                    </div>
+                    <div class="col-md-9">
+                            <div class="panel panel-default">
+                                    <div class="panel-heading main-color-bg">
+                                        <h4 class="panel-title">Light weight vehicles</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                    <br>
+                                    </div>
+                                    
+                             </div>
                     </div>
                 </div>
             </div>
