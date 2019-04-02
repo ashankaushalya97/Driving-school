@@ -26,6 +26,7 @@
         
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
+                <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -35,7 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Instructors</a>
                 </li>
-                
+                -->
             </ul>
             <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
@@ -53,7 +54,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
-                        <h2><i class="fas fa-cog"> </i> Dashboard <small> Explore the universe</small></h2>
+                        <h3><i class="fas fa-cog"> </i> Dashboard | <small> Explore the universe</small></h3>
                     </div>
                     <div class="col-md-2">
 
@@ -75,12 +76,12 @@
                 <div class="row">
                     <div class="col-md-3">
                             <div class="list-group">
-                                    <a href="index.php" class="list-group-item list-group-item-action active main-color-bg"><i class="far fa-credit-card"></i> Dashboard</a>
+                                    <a href="index.php" class="list-group-item list-group-item-action"><i class="far fa-credit-card"></i> Dashboard</a>
                                     <a href="schedule.php" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
                                     <a href="students.php" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
-                                    <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
-                                    <a href="fleet.php" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet</a>
-                                    <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
+                                    <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors<span class="badge badge-secondary float-right">12</span></a>
+                                    <a href="fleet.php" class="list-group-item list-group-item-action"><i class="fas fa-car"></i> Fleet<span class="badge badge-secondary float-right">12</span></a>
+                                    <a href="payments.php" class="list-group-item list-group-item-action active main-color-bg"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
                                                     
                                   </div> 
                     </div>
@@ -89,8 +90,8 @@
                                     <div class="panel-heading main-color-bg">
                                         <h4 class="panel-title">Payments</h4>
                                     </div>
-                                    <br>
                                     <div>
+                        <article class="topcontent">                
                         <form >
                             <div class="row">
                                 <div class="col-1"></div>
@@ -152,6 +153,7 @@
                             <br>
                             <br>
                         </form>
+                        </article>
                     </div>
                                     
                                     

@@ -26,6 +26,7 @@
         
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
+                <!--
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -35,7 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Instructors</a>
                 </li>
-                
+                -->
             </ul>
             <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
@@ -53,7 +54,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10">
-                        <h2><i class="fas fa-cog"> </i> Dashboard <small> Explore the universe</small></h2>
+                        <h3><i class="fas fa-cog"> </i> Dashboard | <small> Explore the universe</small></h3>
                     </div>
                     <div class="col-md-2">
 
@@ -78,8 +79,8 @@
                                 <a href="index.php" class="list-group-item list-group-item-action "><i class="far fa-credit-card"></i> Dashboard</a>
                                 <a href="schedule.php" class="list-group-item list-group-item-action"><i class="far fa-calendar-alt"></i> Schedule <span class="badge badge-secondary float-right">5</span></a>
                                 <a href="students.php" class="list-group-item list-group-item-action"><i class="fas fa-user"></i> Students <span class="badge badge-secondary float-right">12</span></a>
-                                <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors</a>
-                                <a href="fleet.php" class="list-group-item list-group-item-action active main-color-bg"><i class="fas fa-car"></i> Fleet</a>
+                                <a href="instructors.php" class="list-group-item list-group-item-action"><i class="fas fa-user-tie"></i> Instructors<span class="badge badge-secondary float-right">12</span></a>
+                                <a href="fleet.php" class="list-group-item list-group-item-action active main-color-bg"><i class="fas fa-car"></i> Fleet<span class="badge badge-secondary float-right">12</span></a>
                                 <a href="payments.php" class="list-group-item list-group-item-action"><i class="fas fa-dollar-sign"></i> Payments <span class="badge badge-secondary float-right">2</span></a>
                                                         
                             </div> 
@@ -90,7 +91,7 @@
                                         <h4 class="panel-title">Light weight vehicles</h4>
                                     </div>
                                     <div class="panel-body">
-                                    <br>
+                                    <article class="topcontent">   
                                     <div class="container">
                                     
                                         <div class="row">
@@ -131,7 +132,10 @@
                                     </div>
                                     
                                   </div>
+                                  </article>
                     </div>
+                    <br>
+
                     <div class="col-md-9">
                             <div class="panel panel-default">
                                     <div class="panel-heading main-color-bg">
@@ -139,6 +143,9 @@
                                     </div>
                                     <div class="panel-body">
                                     <br>
+                                    <article class="topcontent">
+                                        ddfkjberjbfjwhbrgkrbgkebg
+                                    </article>
                                     </div>
                                     
                              </div>

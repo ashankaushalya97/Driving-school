@@ -1,5 +1,5 @@
 body {
-    background: #f4f4f4;
+  background: #f4f4f4;
 }
 /* .navbar {
     min-height: 33px !important;
@@ -11,91 +11,112 @@ body {
     padding-top: 6px !important;
     padding-bottom: 0 !important;
     height: 33px;
-} */
+    } */
 
-.navbar {
-    background-color: #032240;
-  }
-  .navbar .navbar-brand {
-    color: #ecf0f1;
-  }
-  .navbar .navbar-brand:hover,
-  .navbar .navbar-brand:focus {
-    color: #9da4a5;
-  }
-  .navbar .navbar-text {
-    color: #ecf0f1;
-  }
-  .navbar .navbar-text a {
-    color: #9da4a5;
-  }
-  .navbar .navbar-text a:hover,
-  .navbar .navbar-text a:focus {
-    color: #9da4a5; 
-  }
-  .navbar .navbar-nav .nav-link {
-    color: #ecf0f1;
-    border-radius: .25rem;
-    margin: 0 0.25em;
-  }
-  .navbar .navbar-nav .nav-link:not(.disabled):hover,
-  .navbar .navbar-nav .nav-link:not(.disabled):focus {
-    color: #9da4a5;
-  }
-  .navbar .navbar-nav .nav-item.active .nav-link,
-  .navbar .navbar-nav .nav-item.active .nav-link:hover,
-  .navbar .navbar-nav .nav-item.active .nav-link:focus,
-  .navbar .navbar-nav .nav-item.show .nav-link,
-  .navbar .navbar-nav .nav-item.show .nav-link:hover,
-  .navbar .navbar-nav .nav-item.show .nav-link:focus {
-    color: #9da4a5;
-    background-color: #020f27;
-  }
-  .navbar .navbar-toggle {
-    border-color: #020f27;
-  }
-  .navbar .navbar-toggle:hover,
-  .navbar .navbar-toggle:focus {
-    background-color: #020f27;
-  }
-  .navbar .navbar-toggle .navbar-toggler-icon {
-    color: #ecf0f1;
-  }
-  .navbar .navbar-collapse,
-  .navbar .navbar-form {
-    border-color: #ecf0f1;
-  }
-  .navbar .navbar-link {
-    color: #ecf0f1;
-  }
-  .navbar .navbar-link:hover {
-    color: #9da4a5;
-  }
+    .navbar {
+      background-color: #032240;
+    }
+    .navbar .navbar-brand {
+      color: #ecf0f1;
+    }
+    .navbar .navbar-brand:hover,
+    .navbar .navbar-brand:focus {
+      color: #9da4a5;
+    }
+    .navbar .navbar-text {
+      color: #ecf0f1;
+    }
+    .navbar .navbar-text a {
+      color: #9da4a5;
+    }
+    .navbar .navbar-text a:hover,
+    .navbar .navbar-text a:focus {
+      color: #9da4a5; 
+    }
+    .navbar .navbar-nav .nav-link {
+      color: #ecf0f1;
+      border-radius: .25rem;
+      margin: 0 0.25em;
+    }
+    .navbar .navbar-nav .nav-link:not(.disabled):hover,
+    .navbar .navbar-nav .nav-link:not(.disabled):focus {
+      color: #9da4a5;
+    }
+    .navbar .navbar-nav .nav-item.active .nav-link,
+    .navbar .navbar-nav .nav-item.active .nav-link:hover,
+    .navbar .navbar-nav .nav-item.active .nav-link:focus,
+    .navbar .navbar-nav .nav-item.show .nav-link,
+    .navbar .navbar-nav .nav-item.show .nav-link:hover,
+    .navbar .navbar-nav .nav-item.show .nav-link:focus {
+      color: #9da4a5;
+      background-color: #020f27;
+    }
+    .navbar .navbar-toggle {
+      border-color: #020f27;
+    }
+    .navbar .navbar-toggle:hover,
+    .navbar .navbar-toggle:focus {
+      background-color: #020f27;
+    }
+    .navbar .navbar-toggle .navbar-toggler-icon {
+      color: #ecf0f1;
+    }
+    .navbar .navbar-collapse,
+    .navbar .navbar-form {
+      border-color: #ecf0f1;
+    }
+    .navbar .navbar-link {
+      color: #ecf0f1;
+    }
+    .navbar .navbar-link:hover {
+      color: #9da4a5;
+    }
 
-  .main-color-bg {
+    .main-color-bg {
       background-color:#020f27 !important;
       border-color: #9da4a5 !important;
       color: #ffffff;
-  }
-  #header {
+    }
+    #header {
       background: #000000;
       color: #ffffff;
       padding-bottom: 10px auto;
       margin-bottom: 20px;
-  }
-  #header h2>small {
+    }
+    #header h2>small {
       color: #838383;
-  }
-  .breadcrumb {
+    }
+    .breadcrumb {
       background: #cccccc;
       color: #333333;
-  }
-  .breadcrumb a {
+    }
+    .breadcrumb a {
       color: #333333;
+    }
+    .Content{
+      width:100%;
+      height:900px;
+      overflow-y: auto;
+      float:left;
+      box-shadow: 0 5px 10px #efefef; 
+      margin-bottom: 5px;
+
+    }
+    .topcontent{
+      background-color:#FFF;
+      border-radius:5px;
+      -moz-border-radius:5px;
+      -webkit-border-radius:5px;
+      padding: 3% 5%;
+      margin-top: 2px; 
+      margin-bottom: 3px;
+      box-shadow: 0 5px 10px #efefef;
+    }
+    .dash-style{
+  text-align:center !important;
   }
-  .well {
-    background-color: rgb(230, 229, 229);
-    height: 130px;
-    padding-left: 5px;
-    padding-top: 20px;
-  }
+  .post-info{
+  color: #999;
+  font-style: italic;
+  font-size: small-caption;
+}
