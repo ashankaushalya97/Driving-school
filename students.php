@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
-    
-
+   
     <title>DMS | Students </title>
 </head>
 <body>
@@ -89,9 +88,46 @@
                 <div class="panel-heading main-color-bg">
                         <h4 class="panel-title">Students</h4>
                 </div>
-                <article class="topcontent text-center">
-                    <button type="button" class="btn btn-success btn-md "><i class="fas fa-user"></i> + Add Student</button>
+                <article class="topcontent ">
+                    <button type="button" class="btn btn-success btn-md " data-toggle="modal" data-target="#login-modal"><i class="fas fa-user"></i> + Add Student</button>
+                        <div class="modal" role="dialog" id="login-modal">
+                            <div class="modal-dialog text-left">
+                                 <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header text-center">
+                                                <h4 class="modal-title"><i class="fas fa-user"></i> Add Student</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Name</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Address</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Date of birth</label>
+                                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date Of Birth">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Contact Number</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number">
+                                                </div>
+                                                
+                                                
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>                            
+                                    </div>
+                        </div>
                 </article>
+
                    <div class="row">
                        <div class="col-sm-4">
                         <article class="topcontent">

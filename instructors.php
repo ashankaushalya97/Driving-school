@@ -80,8 +80,44 @@
                 <div class="panel-heading main-color-bg">
                         <h4 class="panel-title">Instructors</h4>
                 </div>
-                <article class="topcontent text-center">
-                    <button type="button" class="btn btn-success btn-md "><i class="fas fa-user-tie"></i> + Add Instructor</button>
+                <article class="topcontent text-center">"
+                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#instructor-modal"><i class="fas fa-user-tie"></i> + Add Instructor</button>
+                    <div class="modal" role="dialog" id="instructor-modal">
+                            <div class="modal-dialog text-left">
+                                 <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header text-center">
+                                                <h4 class="modal-title"><i class="fas fa-user-tie"></i> Add Instructor</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Name</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Contact Number</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Address</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                                                </div>
+                                                
+                                                
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>                            
+                                    </div>
+                        </div>
                 </article>
                    <div class="row">
                        <div class="col-sm-4">
