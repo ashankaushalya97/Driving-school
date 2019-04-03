@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php 
-    require_once('inc/functions.php');
+    require_once('inc/connection.php');
 ?>
 
 <!doctype html>
