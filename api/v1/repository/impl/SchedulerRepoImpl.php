@@ -41,7 +41,7 @@ class SchedulerRepoImpl implements SchedulerRepo
 
     public function delete($time)
     {
-        $result = $this->conn->query("delete from schedule where time=$time");
+        $result = $this->conn->query("delete from schedule where time= $time");
 
         return $result;
     }
@@ -66,11 +66,15 @@ class SchedulerRepoImpl implements SchedulerRepo
 
     public function findAll()
     {
-        
+        $result = $this->conn->query("select * from schedule");
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function find($time)
     {
-        // TODO: Implement find() method.
+        $result = $this->conn->query("select * from schedule where time= $time");
+
+        return $result->fetch_assoc();
     }
 }
