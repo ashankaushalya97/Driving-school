@@ -157,13 +157,30 @@
                         <article class="topcontent">
                             <div class="container" id="fleet-container">
 
-                                <!--<div class="row">
+                                <div class="row">
                                     <div class="col-md-3 text-center">
                                         <div class="well dash-box"
                                              style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
                                             <h2 class="text-center"><img src="img/f1.jpg" class="img-thumbnail"></h2>
                                             <h5 class="text-center">Mitsubishi Lancer Evolution IX</h5>
                                             <button type="button" class="btn btn-primary btn-sm ">View Details</button>
+                                                                <div class="modal" role="dialog" id="login-modal">
+                                                <div class="modal-dialog text-left">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header text-center">
+                                                            <h4 class="modal-title"><i class="fas fa-car"></i> Add Vehicle</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- modal -->
                                         </div>
 
 
@@ -198,7 +215,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>-->
+                                </div>
 
                             </div>
                         </article>
