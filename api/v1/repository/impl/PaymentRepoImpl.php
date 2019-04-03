@@ -52,7 +52,7 @@ class PaymentRepoImpl implements PaymentRepo
     public function update($Payment_ID, $Ref, $Amount, $Method, $Date, $Member_ID)
     {
         $pstm = $this->conn->prepare("update Payment set Ref= ? ,Amount= ? ,Method= ? ,Date= ? ,Member_ID= ? where Payment_ID = ?");
-        $pstm->bind_param("isdssi", $param2, $param3, $param4, $param5, $param6, $param1);
+        $pstm->bind_param("sdssii", $param2, $param3, $param4, $param5, $param6, $param1);
 
         $param1 = $Payment_ID;
         $param2 = $Ref;

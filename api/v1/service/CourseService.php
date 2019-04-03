@@ -8,5 +8,10 @@
 
 interface CourseService
 {
+    function addCourse($course_id , $course_name, $fee);
+
+    function changeCourseDetails($course_id , $course_name, $fee);
+
+    function getCourseUsers($course_id);
 
 }

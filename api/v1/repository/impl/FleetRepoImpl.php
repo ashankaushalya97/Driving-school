@@ -53,7 +53,7 @@ class FleetRepoImpl implements FleetRepo
     public function update($vehicle_ID, $reg_no, $car_type, $YOM, $started_date, $remove_date, $course_date)
     {
         $pstm = $this->conn->prepare("update vehicle set reg_no= ? ,car_type= ? ,yom= ? ,started_date= ? ,remove_date= ? ,course_ID= ? where vehicle_ID = ?");
-        $pstm->bind_param("iisissi", $param2, $param3, $param4, $param5, $param6, $param7, $param1);
+        $pstm->bind_param("isissii", $param2, $param3, $param4, $param5, $param6, $param7, $param1);
 
         $param1 = $vehicle_ID;
         $param2 = $reg_no;
