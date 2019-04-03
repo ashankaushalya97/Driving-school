@@ -22,9 +22,7 @@ $(document).ready(function () {
             async: true
         }).done(function (response) {
             if (response) {
-                localStorage.setItem("admin", {
-                    username: username
-                });
+                localStorage.setItem("admin", {username: username});
 
                 window.location.href = "index.php";
             } else {

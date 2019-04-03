@@ -27,7 +27,7 @@ class UserServiceImpl implements UserService
         $this->adminRepo->setConnection((new DBConnection())->getConnection());
         $admin = $this->adminRepo->find($username);
 
-        if ($admin["password"] == $password) {
+        if ($admin["password"] === $password) {
             return true;
         }
 
