@@ -11,23 +11,23 @@ class SchedulerRepoImpl implements SchedulerRepo
 
     private $conn;
 
-    public function __construct()
+    /*public function __construct()
     {
         $this->conn = new mysqli("cdcd", "cdscd", "ccdc", "scc", "csc");
-    }
+    }*/
 
     public function setConnection(mysqli $conn)
     {
         $this->conn = $conn;
     }
 
-    public function create($time, $course, $description)
+    public function create($Schedule_time, $Course_ID, $description)
     {
-        $pstm = $this->conn->prepare("insert into schedule (schedule_date,course,description) values (?,?,?)");
-        $pstm->bind_param("sss", $param1, $param2, $param3);
+        $pstm = $this->conn->prepare("insert into schedule (Schedule_time,Course_ID,description) values (?,?,?)");
+        $pstm->bind_param("sis", $param1, $param2, $param3);
 
-        $param1 = $time;
-        $param2 = $course;
+        $param1 = $Schedule_time;
+        $param2 = $Course_ID;
         $param3 = $description;
 
         $result = $pstm->execute();
@@ -39,26 +39,26 @@ class SchedulerRepoImpl implements SchedulerRepo
         }
     }
 
-    public function delete($time)
+    public function delete($Schedule_time)
     {
-        $result = $this->conn->query("delete from schedule where time= $time");
+        $result = $this->conn->query("delete from schedule where Schedule_time= $Schedule_time");
 
         return $result;
     }
 
-    public function update($time, $course, $description)
+    public function update($Schedule_time, $Course_ID, $Session_type)
     {
-        $pstm = $this->conn->prepare("update schedule set course= $course ,description= $description where schedule_date = $time");
-        $pstm->bind_param("sss", $param2, $param3, $param1);
+        $pstm = $this->conn->prepare("update schedule set Course_ID= $Course_ID ,Session_type= $Session_type where Schedule_time = $Schedule_time");
+        $pstm->bind_param("iss", $param2, $param3, $param1);
 
-        $param1 = $time;
-        $param2 = $course;
-        $param3 = $description;
+        $param1 = $Schedule_time;
+        $param2 = $Course_ID;
+        $param3 = $Session_type;
 
         $result = $pstm->execute();
 
         if ($result) {
-            return $pstm->insert_id;
+            return $pstm->affected_rows;
         } else {
             return -1;
         }
@@ -71,9 +71,9 @@ class SchedulerRepoImpl implements SchedulerRepo
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function find($time)
+    public function find($Schedule_time)
     {
-        $result = $this->conn->query("select * from schedule where time= $time");
+        $result = $this->conn->query("select * from schedule where Schedule_time= $Schedule_time");
 
         return $result->fetch_assoc();
     }

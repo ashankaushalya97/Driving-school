@@ -3,20 +3,20 @@
  * Created by IntelliJ IDEA.
  * User: beempz
  * Date: 4/1/19
- * Time: 11:49 PM
+ * Instructor_ID: 11:49 PM
  */
 
-interface SchedulerRepo
+interface InstructorRepo
 {
     public function setConnection(mysqli $conn);
 
-    public function create($time, $course, $description);
+    public function create($Instructor_ID, $course, $description);
 
-    public function delete($time);
+    public function delete($Instructor_ID);
 
-    public function update($time, $course, $description);
+    public function update($Instructor_ID, $course, $description);
 
     public function findAll();
 
-    public function find($time);
+    public function find($Instructor_ID);
 }
