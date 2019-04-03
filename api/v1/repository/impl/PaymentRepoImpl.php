@@ -72,7 +72,7 @@ class PaymentRepoImpl implements PaymentRepo
 
     public function findAll()
     {
-        $result = $this->conn->query("select * from vehicle");
+        $result = $this->conn->query("select * from payment");
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -85,9 +85,9 @@ class PaymentRepoImpl implements PaymentRepo
 
     }
 
-    public function find($vehicle_ID)
+    public function find($Payment_ID)
     {
-        $result = $this->conn->query("select * from vehicle where vehicle_ID= $vehicle_ID");
+        $result = $this->conn->query("select * from Payment where Payment_ID= $payment_ID");
 
         return $result->fetch_assoc();
     }
