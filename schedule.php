@@ -86,9 +86,14 @@
         </div>
         <div class="col-sm-9">
           <div class="content">
+          <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h4 class="panel-title text-center">Payments</h4>
+              </div>
+          <div>
             <article class="topcontent">
-              <h3>Schedule</h3>
-              <hr>
+             
+              
               calendar
             </article>
           </div>

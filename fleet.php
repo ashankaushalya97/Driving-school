@@ -85,11 +85,14 @@
                                                         
                             </div> 
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 text-center">
                             <div class="panel panel-default">
                                     <div class="panel-heading main-color-bg">
                                         <h4 class="panel-title">Light weight vehicles</h4>
                                     </div>
+                                    <article class="topcontent text-center">
+                                    <button type="button" class="btn btn-success btn-md "><i class="fas fa-car"></i> + Add Vehicle</button>
+                                    </article>
                                     <div class="panel-body">
                                     <article class="topcontent">   
                                     <div class="container">
@@ -135,21 +138,26 @@
                                   </article>
                     </div>
                     <br>
-
-                    <div class="col-md-9">
-                            <div class="panel panel-default">
-                                    <div class="panel-heading main-color-bg">
-                                        <h4 class="panel-title">Light weight vehicles</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                    <br>
-                                    <article class="topcontent">
-                                        ddfkjberjbfjwhbrgkrbgkebg
-                                    </article>
-                                    </div>
-                                    
-                             </div>
+                    
                     </div>
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                <div class="panel panel-default">
+                                        <div class="panel-heading main-color-bg">
+                                            <h4 class="panel-title">Light weight vehicles</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                        <br>
+                                        <article class="topcontent">
+                                            ddfkjberjbfjwhbrgkrbgkebg
+                                        </article>
+                                        </div>
+                                        
+                                </div>
+                        </div>
+                    
+                    </div><!-- container -->
                 </div>
             </div>
         </section>

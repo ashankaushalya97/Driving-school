@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php 
-    require_once('inc/functions.php');
+    require_once('inc/connection.php');
 ?>
 
 <!doctype html>
@@ -79,7 +79,7 @@
 
                     </div> 
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
                     <div class="panel panel-default">
                         <div class="panel-heading main-color-bg">
                             <h4 class="panel-title">Overview</h4>

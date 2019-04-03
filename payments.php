@@ -88,7 +88,7 @@
                     <div class="col-md-9">
                             <div class="panel panel-default">
                                     <div class="panel-heading main-color-bg">
-                                        <h4 class="panel-title">Payments</h4>
+                                        <h4 class="panel-title text-center">Payments</h4>
                                     </div>
                                     <div>
                         <article class="topcontent">                
@@ -102,7 +102,7 @@
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-5">
                                     <div class="dropdown" id="cmbCreditSupplier">
-                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropDownCreditSupplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Supplier</button>
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropDownCreditSupplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Student</button>
                                         <div class="dropdown-menu" aria-labelledby="dropDownCreditSupplier" id="creditsupplierList">
                                             <p class="dropdown-item" >Student</p>
                                         </div>
