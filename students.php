@@ -85,7 +85,13 @@
 
                     </div> 
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-9 text-center">
+                <div class="panel-heading main-color-bg">
+                        <h4 class="panel-title">Students</h4>
+                </div>
+                <article class="topcontent text-center">
+                    <button type="button" class="btn btn-success btn-md "><i class="fas fa-user"></i> + Add Student</button>
+                </article>
                    <div class="row">
                        <div class="col-sm-4">
                         <article class="topcontent">
