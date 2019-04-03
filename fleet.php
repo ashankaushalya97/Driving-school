@@ -91,7 +91,46 @@
                                         <h4 class="panel-title">Light weight vehicles</h4>
                                     </div>
                                     <article class="topcontent text-center">
-                                    <button type="button" class="btn btn-success btn-md "><i class="fas fa-car"></i> + Add Vehicle</button>
+                                        <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#login-modal"><i class="fas fa-car"></i> + Add Vehicle</button>
+                                                        <div class="modal" role="dialog" id="login-modal">
+                                            <div class="modal-dialog text-left">
+                                                <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header text-center">
+                                                                <h4 class="modal-title"><i class="fas fa-car"></i> Add Vehicle</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Register Number</label>
+                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Vehicle Type</label>
+                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Year Of Manufacture</label>
+                                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Image</label>
+                                                                    <div class="custom-file">
+                                                                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                
+                                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>                            
+                                                    </div>
+                                        </div>
                                     </article>
                                     <div class="panel-body">
                                     <article class="topcontent">   

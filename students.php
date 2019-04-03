@@ -91,7 +91,7 @@
                 <article class="topcontent ">
                     <button type="button" class="btn btn-success btn-md " data-toggle="modal" data-target="#login-modal"><i class="fas fa-user"></i> + Add Student</button>
                         <div class="modal" role="dialog" id="login-modal">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog text-left">
                                  <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header text-center">
@@ -101,19 +101,19 @@
                                                 <form>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Name</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Date of birth</label>
-                                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date Of Birth">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Contact Number</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number">
                                                 </div>
                                                 
                                                 
