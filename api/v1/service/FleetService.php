@@ -8,5 +8,6 @@
 
 interface FleetService
 {
+    function addVehicle($Vehicle_ID,$Reg_No,$Car_type);
 
 }
