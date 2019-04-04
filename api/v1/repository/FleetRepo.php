@@ -10,7 +10,7 @@ interface FleetRepo
 {
     public function setConnection(mysqli $conn);
 
-    public function create($vehicle_ID, $reg_no, $car_type, $YOM, $started_date, $remove_date, $course_date);
+    public function create($vehicle_ID, $reg_no, $car_type, $YOM, $started_date, $remove_date, $course_date,$imagePath);
 
     public function delete($vehicle_ID);
 

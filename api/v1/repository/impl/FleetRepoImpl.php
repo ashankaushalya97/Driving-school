@@ -24,7 +24,7 @@ class FleetRepoImpl implements FleetRepo
     public function create($vehicle_ID, $reg_no, $car_type, $yom, $started_date, $remove_date, $course_ID,$imagePath)
     {
         $pstm = $this->conn->prepare("insert into vehicle (vehicle_ID,reg_no,car_type,yom,started_date,remove_date,course_ID, imagePath) values (?,?,?,?,?,?,?,?)");
-        $pstm->bind_param("iisissi", $param1, $param2, $param3, $param4, $param5, $param6, $param7, $param8);
+        $pstm->bind_param("iisissis", $param1, $param2, $param3, $param4, $param5, $param6, $param7, $param8);
 
         $param1 = $vehicle_ID;
         $param2 = $reg_no;

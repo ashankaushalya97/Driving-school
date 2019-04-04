@@ -8,6 +8,7 @@
 
 interface FleetService
 {
-    function addVehicle($Vehicle_ID,$Reg_No,$Car_type);
-
+    public function saveFleet($vehicle_ID, $reg_no, $car_type, $YOM, $started_date, $remove_date, $course_date, $imagePath);
+    public function findOne($vehicle_ID);
+    public function findAll();
 }
