@@ -21,10 +21,10 @@ class FleetRepoImpl implements FleetRepo
         $this->conn = $conn;
     }
 
-    public function create($vehicle_ID, $reg_no, $car_type, $yom, $started_date, $remove_date, $course_ID)
+    public function create($vehicle_ID, $reg_no, $car_type, $yom, $started_date, $remove_date, $course_ID,$imagePath)
     {
-        $pstm = $this->conn->prepare("insert into vehicle (vehicle_ID,reg_no,car_type,yom,started_date,remove_date,course_ID) values (?,?,?,?,?,?,?)");
-        $pstm->bind_param("iisissi", $param1, $param2, $param3, $param4, $param5, $param6, $param7);
+        $pstm = $this->conn->prepare("insert into vehicle (vehicle_ID,reg_no,car_type,yom,started_date,remove_date,course_ID, imagePath) values (?,?,?,?,?,?,?,?)");
+        $pstm->bind_param("iisissi", $param1, $param2, $param3, $param4, $param5, $param6, $param7, $param8);
 
         $param1 = $vehicle_ID;
         $param2 = $reg_no;
@@ -33,6 +33,7 @@ class FleetRepoImpl implements FleetRepo
         $param5 = $started_date;
         $param6 = $remove_date;
         $param7 = $course_ID;
+        $param8 = $imagePath;
 
         $result = $pstm->execute();
 

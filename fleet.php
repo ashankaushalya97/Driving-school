@@ -114,26 +114,26 @@
                                         <h4 class="modal-title"><i class="fas fa-car"></i> Add Vehicle</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
+                                        <form enctype="multipart/form-data" method="post" id="add-fleet-form">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Register Number</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                                <input type="text" name="registerNumber" class="form-control" id="exampleInputEmail"
+                                                       aria-describedby="emailHelp" placeholder="Register Number">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Vehicle Type</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                                <input type="text" class="form-control" name="vehicleType" id="exampleInputEmail1"
+                                                       aria-describedby="emailHelp" placeholder="Vehicle Type">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Year Of Manufacture</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                                <input type="text" class="form-control" name="yom" id="exampleInputEmail2"
+                                                       aria-describedby="emailHelp" placeholder="Year of manufacture">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" accept="image/*"
+                                                    <input type="file" class="custom-file-input" name="imageFleet" accept="image/*"
                                                            id="inputGroupFile01"
                                                            aria-describedby="inputGroupFileAddon01">
                                                     <label class="custom-file-label" for="inputGroupFile01">Choose
@@ -142,7 +142,7 @@
                                             </div>
 
 
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
