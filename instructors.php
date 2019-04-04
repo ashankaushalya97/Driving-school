@@ -93,7 +93,7 @@
                                                 <form>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Name</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Email</label>
@@ -105,7 +105,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Address</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                                                 </div>
                                                 
                                                 
