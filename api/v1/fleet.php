@@ -27,5 +27,5 @@ switch ($method) {
         $yom= $_POST["yom"];
         $imagePath = $imageService->uploadImage($_FILES["imageFleet"]);
 
-        json_encode($fleetService->)
+        json_encode($fleetService->saveFleet($registerNumber,$registerNumber,$registerNumber,$yom,date("Y-m-d H:i:s"),null,null,$imagePath))
 }
