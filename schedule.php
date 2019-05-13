@@ -88,18 +88,17 @@
           <div class="content">
           <div class="panel panel-default">
               <div class="panel-heading main-color-bg">
-                <h4 class="panel-title text-center">Payments</h4>
+                <h4 class="panel-title text-center">Schedule</h4>
               </div>
           <div>
+          
             <article class="topcontent">
-             
+            
               
-              calendar
-            </article>
-          </div>
-        </div>
-      </div>     
-      </div>
+              Calendar
+              <br><br>
+              
+
 </section>
 
 

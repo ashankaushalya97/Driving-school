@@ -143,6 +143,32 @@
                             </div>
                             <br>
                             <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-3">
+                                    <label for="txtMethod">Method</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-5">
+                                    <input class="form-control" type="text" name="txtMethod" id="txtMethod" placeholder="Method">
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-3">
+                                    <label for="date">Date</label>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-1"></div>
+                                <div class="col-10 col-md-5">
+                                    <input class="form-control" type="date" name="date" id="date">
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <br><br>
+                            <div class="row">
                                 <div class="col-3 col-md-4"></div>
                                 <div class="col-6 col-md-4">
                                     <button type="button" id="btnAddCredit" class="btn btn-success">Submit</button>

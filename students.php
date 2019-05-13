@@ -115,7 +115,14 @@
                                                     <label for="exampleInputEmail1">Contact Number</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number">
                                                 </div>
-                                                
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Register-date</label>
+                                                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Register date">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Completed-date</label>
+                                                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Completed date">
+                                                </div>
                                                 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                                 </form>

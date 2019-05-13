@@ -131,6 +131,16 @@
                                                        aria-describedby="emailHelp" placeholder="Year of manufacture">
                                             </div>
                                             <div class="form-group">
+                                                <label for="exampleInputEmail1">Started-date</label>
+                                                <input type="datetime" name="started-date" class="form-control" id="exampleInputEmail"
+                                                       aria-describedby="emailHelp" placeholder="Started date">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Remove-date</label>
+                                                <input type="datetime" name="removedate" class="form-control" id="exampleInputEmail"
+                                                       aria-describedby="emailHelp" placeholder="Remove date">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Image</label>
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" name="imageFleet" accept="image/*"
