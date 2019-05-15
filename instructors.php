@@ -92,7 +92,7 @@
                                             <div class="modal-body">
                                                 <form>
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Name</label>
+                                                     <label for="exampleInputEmail1">Name</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
@@ -107,7 +107,14 @@
                                                     <label for="exampleInputEmail1">Address</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                                                 </div>
-                                                
+                                                <div class="form-group">
+                                                     <label for="exampleInputEmail1">Start-date</label>
+                                                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Start date">
+                                                </div>
+                                                <div class="form-group">
+                                                     <label for="exampleInputEmail1">Resign-date</label>
+                                                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Resign date">
+                                                </div>
                                                 
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                                 </form>
