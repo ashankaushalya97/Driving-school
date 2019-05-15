@@ -34,7 +34,7 @@ function clickedButton(vehicle_id) {
     $.ajax({
         url: "api/v1/fleet.php?id="+vehicle_id,
         method: "GET",
-        async: true;
+        async: true
     }).done(function (response) {
 
     })

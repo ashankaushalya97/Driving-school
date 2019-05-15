@@ -8,5 +8,5 @@
 
 interface ImageService
 {
-    public fuction uploadImage($file);
+    
 }
