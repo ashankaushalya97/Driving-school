@@ -202,7 +202,6 @@
           <div>
           
             <article class="topcontent">
-<<<<<<< HEAD
 
               <div id="calendar"></div>
 
@@ -212,14 +211,6 @@
         </div>
       </div>     
       </div>
-=======
-            
-              
-              Calendar
-              <br><br>
-              
-
->>>>>>> 463c821dc795370b98532e22be61e4b614b2e95d
 </section>
 
 
