@@ -93,6 +93,34 @@
                   <button type="button" class="btn btn-dark">Add course  <i class="fas fa-plus"></i></button>
                 </div>
               </div>
+                <div class="container">
+                <form>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Name</label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Address</label>
+                               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address"disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Date of birth</label>
+                               <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date Of Birth" disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Contact Number</label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number" disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Register-date</label>
+                               <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Register date" disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Completed-date</label>
+                               <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Completed date" disabled>
+                           </div>
+                  </form>
+                </div>
               
               <h5>Courses enrolled</h5>
               <p class="post-info">
