@@ -1,7 +1,12 @@
 <?php session_start(); ?>
+
 <?php 
     require_once('inc/connection.php');
 ?>
+<?php 
+    require_once('inc/functions.php');
+?>
+
 <?php
 
     // check for form submission
@@ -19,13 +24,12 @@
             // check if there are any errors in the form
             if(empty($errors)) {
 
-//                // save username and password into variables
+              // save username and password into variables
                 $email = mysqli_real_escape_string($connection,$_POST['email']);
                 $password = mysqli_real_escape_string($connection,$_POST['password']);
                 
 
-               // prepare dat
-                //abase query
+               // prepare database query
                 $query = "SELECT * FROM admin
                             WHERE email = '{$email}'
                            AND password = '{$password}'
@@ -45,7 +49,7 @@
 
 
 
-                        header("Location: index.php");
+                        header("Location:index.php");
                     }else {
                         //username or password invalid.
                         $errors[] = 'Invalid username / password.';
@@ -74,21 +78,17 @@
 				<br>
 				
 				<br>
-				<form class="form-container">
+				<form class="form-container" action="login.php" method="post" >
 				<?php
                     if(isset($errors) && !empty($errors)) {
                         echo '<p class="error">Invalid username / password. </p>';
                     }
                 ?>
-                <?php
-                    if(isset($_GET['logout'])) {
-                        echo '<p class="info">You are successfully loged out. </p>';
-                    }
-                ?>
                 
 					<div class="form-group">
 						<label for="username-field">Username</label>
-						<input type="email" class="form-control" id="username-field" aria-describedby="emailHelp" placeholder="Username" name="username">
+                        
+						<input type="email" class="form-control" id="username-field" aria-describedby="emailHelp" placeholder="Username" name="email">
 						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					</div>
 					<div class="form-group">
@@ -99,8 +99,9 @@
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
 						<label class="form-check-label" for="exampleCheck1">Check me out</label>
 					</div>
-					<button type="submit" name="submit" class="btn btn-primary btn-block" id="login-btn" >Login</button>
+					<button type="submit" name="submit" class="btn btn-primary btn-block" id="login-btn">Login</button>
 					<div class="row">
+                    
 						<div class="col-sm-6">
 							<a href="#">Forgot your password?</a>
 						</div>

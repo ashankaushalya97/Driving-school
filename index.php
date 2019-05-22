@@ -35,10 +35,10 @@
             </ul>
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" id="name-display" href="#"></a>
+                    <div class="nav-link">Welcome <?php echo $_SESSION['first_name']; ?> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="logout()">Logout</a>
+                    <a class="nav-link" onclick="logout()" href="logout.php">Logout</a>
                 </li>
 
             </ul>

@@ -31,3 +31,8 @@
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
+p.error {
+    background: red;
+    color: white;
+    padding: 10px;
+}
