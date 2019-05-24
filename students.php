@@ -20,15 +20,16 @@
                 }
                 if(empty($errors)) {
                     //no error //adding new records
-                    $name = mysqli_real_escape_string($connection,$_POST['name']);
-                    $address = mysqli_real_escape_string($connection,$_POST['address']);
-                    $dob = mysqli_real_escape_string($connection,$_POST['dob']);
-                    $contact = mysqli_real_escape_string($connection,$_POST['contact']);
-                    $regdate = mysqli_real_escape_string($connection,$_POST['regdate']);
+                    $name = mysqli_real_escape_string($connection, $_POST['name']);
+                    $address = mysqli_real_escape_string($connection, $_POST['address']);
+                    $dob = mysqli_real_escape_string($connection, $_POST['dob']);
+                    $contact = mysqli_real_escape_string($connection, $_POST['contact']);
+                    $regdate = mysqli_real_escape_string($connection, $_POST['regdate']);
 
-                    $query = "INSERT INTO member (Member_ID,Name,Address,DOB,Contact_No,Register_date) values (1,'{$name}','{$address}','{$dob}','{$contact}','{'$regdate'}')";
+                    $query = "INSERT INTO member ( Name ,Address ,DOB ,Contact_No ,Register_date )
+                                 VALUES ('{$name}','{$address}','{$dob}','{$contact}','{$regdate}')";
 
-                    $result = mysqli_query($connection,$query);
+                    $result = mysqli_query($connection, $query);
 
                     if($result) {
                         echo '<script>  window.alert("Successfuly added the member."); </script>';    
@@ -144,7 +145,7 @@
                                                 <h4 class="modal-title"><i class="fas fa-user"></i> Add Student</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST">
+                                                <form action="students.php" method="post">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Name</label>
                                                     <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
@@ -182,7 +183,7 @@
                         <article class="topcontent">
                                 <h4 id="studentName" value="">Name1</h4>
                                 <hr>
-                                <img src="#" class="profile">
+                                <h2><i class="fas fa-user"></i></h2>
                                 <br>
                                 <a class="btn btn-secondary" href="sProfile.php" role="button">view profile</a>
                         </article>   
