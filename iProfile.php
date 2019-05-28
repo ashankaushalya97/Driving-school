@@ -1,3 +1,44 @@
+<?php session_start(); ?>
+<?php 
+    require_once('inc/connection.php');
+?>
+
+<?php
+
+    $name = '';
+    $email = '';
+    $contact = '';
+    $address = '';
+    $startdate = '';
+
+    if(isset($_GET['instructor_id'])) {
+
+      $instructor_id = mysqli_real_escape_string($connection,$_GET['instructor_id']);
+      $query = "SELECT * FROM instructor WHERE Instructor_ID={$instructor_id} LIMIT 1";
+      $result_set = mysqli_query($connection,$query);
+
+      if($result_set) {
+        if(mysqli_num_rows($result_set)==1) {
+
+          $member = mysqli_fetch_assoc($result_set);
+          $name = $member['Name'];
+          $email = $member['Email'];
+          $contact = $member['Phone'];
+          $address = $member['Address'];
+          $startdate = $member['Start_date'];
+
+        }else {
+
+        }
+      }
+
+
+
+    }else {
+      header("Location:instructors.php?user_id_not_found");
+    }
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -88,12 +129,32 @@
         <div class="col-sm-9">
           <div class="content">
             <article class="topcontent">
-              <h3>Instructor Name</h3>
-              <p class="post-info">
-                Schedule
+              <h3>Instructor Details</h3>
+              <div class="container">
+                <form>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Name</label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $name; ?> disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Email</label>
+                               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $email; ?> disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Contact Number</label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $contact; ?> disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Address</label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $address; ?> disabled>
+                           </div>
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Start-date</label>
+                               <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $startdate; ?> disabled>
+                           </div>
+                  </form>
+                </div>
               </p>
-              <hr>
-              calendar
             </article>
           </div>
         </div>

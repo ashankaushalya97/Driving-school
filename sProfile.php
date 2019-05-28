@@ -1,3 +1,44 @@
+<?php session_start(); ?>
+<?php 
+    require_once('inc/connection.php');
+?>
+
+<?php
+
+    $name = '';
+    $address = '';
+    $dob = '';
+    $contact = '';
+    $regdate = '';
+
+    if(isset($_GET['member_id'])) {
+
+      $member_id = mysqli_real_escape_string($connection,$_GET['member_id']);
+      $query = "SELECT * FROM member WHERE Member_ID={$member_id} LIMIT 1";
+      $result_set = mysqli_query($connection,$query);
+
+      if($result_set) {
+        if(mysqli_num_rows($result_set)==1) {
+
+          $member = mysqli_fetch_assoc($result_set);
+          $name = $member['Name'];
+          $address = $member['Address'];
+          $dob = $member['DOB'];
+          $contact = $member['Contact_No'];
+          $regdate = $member['Register_date'];
+
+        }else {
+
+        }
+      }
+
+
+
+    }else {
+      header("Location:students.php?user_id_not_found");
+    }
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -88,7 +129,7 @@
           <div class="content">
             <article class="topcontent">
               <div class="row">
-                <div class="col-sm-9"><h3>Student Name</h3></div>
+                <div class="col-sm-9"><h3>Student Details</h3></div>
                 <div class="col-sm-3">
                   <button type="button" class="btn btn-dark">Add course  <i class="fas fa-plus"></i></button>
                 </div>
@@ -97,27 +138,23 @@
                 <form>
                            <div class="form-group">
                                <label for="exampleInputEmail1">Name</label>
-                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" disabled>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $name; ?> disabled>
                            </div>
                            <div class="form-group">
                                <label for="exampleInputEmail1">Address</label>
-                               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address"disabled>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $address; ?> disabled>
                            </div>
                            <div class="form-group">
                                <label for="exampleInputEmail1">Date of birth</label>
-                               <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Date Of Birth" disabled>
+                               <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $dob; ?> disabled>
                            </div>
                            <div class="form-group">
                                <label for="exampleInputEmail1">Contact Number</label>
-                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number" disabled>
+                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $contact; ?> disabled>
                            </div>
                            <div class="form-group">
                                <label for="exampleInputEmail1">Register-date</label>
-                               <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Register date" disabled>
-                           </div>
-                           <div class="form-group">
-                               <label for="exampleInputEmail1">Completed-date</label>
-                               <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Completed date" disabled>
+                               <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=<?php echo $regdate; ?> disabled>
                            </div>
                   </form>
                 </div>

@@ -35,7 +35,7 @@
                     if($result) {
                         echo '<script>  window.alert("Successfuly added the member."); </script>'; 
                         
-                        
+                        header("Location:students.php");
 
                     }else {
                         echo '<script>  window.alert("Database query failed!"); </script>';
@@ -214,7 +214,7 @@
                                                         <hr>
                                                         <h2><i class='fas fa-user'></i></h2>
                                                         <br>
-                                                        <a class='btn btn-secondary' href='sProfile.php' role='button'>view profile</a>
+                                                        <a class='btn btn-secondary' href=\"sProfile.php?member_id={$user['Member_ID']}\" role='button'>view profile</a>
                                                     </article>   
                                                 </div>";
                                         }

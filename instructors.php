@@ -1,3 +1,56 @@
+<?php session_start(); ?>
+<?php 
+    require_once('inc/connection.php');
+?>
+
+<?php 
+
+    $errors =array();
+    $count =0;
+
+    if(isset($_POST['submit'])) {
+
+        $req_fields = array('name','email','contact','address','startdate');
+
+                foreach ($req_fields as $field) {
+        
+                    if(empty(trim($_POST[$field]))) {
+                     $errors [] = $field. 'is required.';   
+                    }
+        
+                }
+                if(empty($errors)) {
+                    //no error //adding new records
+                    $name = mysqli_real_escape_string($connection, $_POST['name']);
+                    $email = mysqli_real_escape_string($connection, $_POST['email']);
+                    $contact = mysqli_real_escape_string($connection, $_POST['contact']);
+                    $address = mysqli_real_escape_string($connection, $_POST['address']);
+                    $startdate = mysqli_real_escape_string($connection, $_POST['startdate']);
+
+                    $query = "INSERT INTO instructor ( Name ,Email ,Phone ,Address ,Start_date )
+                                 VALUES ('{$name}','{$email}','{$contact}','{$address}','{$startdate}')";
+
+                    $result = mysqli_query($connection, $query);
+
+                    if($result) {
+                        
+                        echo '<script>  window.alert("Successfuly added the instructor."); </script>'; 
+                        header("Location:instructors.php");
+                        
+                    }else {
+                        echo '<script>  window.alert("Database query failed!"); </script>';
+                    }
+
+
+                }else {
+                    echo '<script>  window.alert("You have empty fields!"); </script>';
+                }
+
+    }
+
+    
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -80,7 +133,7 @@
                 <div class="panel-heading main-color-bg">
                         <h4 class="panel-title">Instructors</h4>
                 </div>
-                <article class="topcontent text-center">"
+                <article class="topcontent text-center">
                     <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#instructor-modal"><i class="fas fa-user-tie"></i> + Add Instructor</button>
                     <div class="modal" role="dialog" id="instructor-modal">
                             <div class="modal-dialog text-left">
@@ -90,33 +143,29 @@
                                                 <h4 class="modal-title"><i class="fas fa-user-tie"></i> Add Instructor</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <form method="post">
                                                 <div class="form-group">
                                                      <label for="exampleInputEmail1">Name</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Contact Number</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number">
+                                                    <input type="text" name="contact" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact Number">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Address</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                                                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
                                                 </div>
                                                 <div class="form-group">
                                                      <label for="exampleInputEmail1">Start-date</label>
-                                                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Start date">
-                                                </div>
-                                                <div class="form-group">
-                                                     <label for="exampleInputEmail1">Resign-date</label>
-                                                    <input type="datetime" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Resign date">
+                                                    <input type="date" name="startdate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Start date">
                                                 </div>
                                                 
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
@@ -127,184 +176,48 @@
                         </div>
                 </article>
                    <div class="row">
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article>   
-                       </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                   </div>
-                   <br>
-                  <div class="row">
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                   </div>
-                   <br>
-               <div class="row">
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article>   
-                       </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                   </div>
-                   <br>
-                   <div class="row">
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article>   
-                       </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                   </div>
-                   <br>
-                  <div class="row">
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                   </div>
-                   <br>
-               <div class="row">
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article>   
-                       </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <a class="btn btn-secondary" href="iProfile.php" role="button">View profile</a>
-                        </article> 
-                       </div>
                        
+                    <?php
+                        $instructor = "SELECT * FROM instructor";
+                        
+                            $result_set = mysqli_query($connection, $instructor);
+                        
+                            if($result_set) {
+                                if(mysqli_num_rows($result_set)>0) {
+                                    
+                                    $count=mysqli_num_rows($result_set);
+                        
+                                    for($x=1; $x<=$count; $x++) {
+
+
+                                        $instructor_name = "SELECT * FROM instructor WHERE Instructor_ID='{$x}' LIMIT 1";
+                                        $result_name = mysqli_query($connection, $instructor_name);
+
+                                        if(mysqli_num_rows($result_name)>0) {
+                                            $user=mysqli_fetch_assoc($result_name);
+                                            $_SESSION['name']= $user['Name'];
+                                        
+                                        
+                                            echo "<div class='col-sm-4'>
+                                                    <article class='topcontent'>
+                                                        <h4 id='studentName'>";
+                                            echo $_SESSION['name'];
+                                            echo "</h4>
+                                                        <hr>
+                                                        <h2><i class='fas fa-user'></i></h2>
+                                                        <br>
+                                                        <a class='btn btn-secondary' href=\"iProfile.php?instructor_id={$user['Instructor_ID']}\" role='button'>view profile</a>
+                                                    </article>   
+                                                </div>";
+                                        }
+
+                                    }
+                        
+                                }
+                            }
+                    ?>
+                   </div>
+                                          
                 </div>
                 <br>
                </div>
