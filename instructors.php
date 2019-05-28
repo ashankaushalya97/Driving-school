@@ -204,7 +204,7 @@
                                             echo $_SESSION['name'];
                                             echo "</h4>
                                                         <hr>
-                                                        <h2><i class='fas fa-user'></i></h2>
+                                                        <h2><i class=\"fas fa-chalkboard-teacher\"></i></h2>
                                                         <br>
                                                         <a class='btn btn-secondary' href=\"iProfile.php?instructor_id={$user['Instructor_ID']}\" role='button'>view profile</a>
                                                     </article>   

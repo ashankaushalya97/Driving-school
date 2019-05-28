@@ -1,3 +1,58 @@
+<?php session_start(); ?>
+<?php 
+    require_once('inc/connection.php');
+?>
+
+<?php 
+
+    $errors =array();
+    $count =0;
+
+    if(isset($_POST['submit'])) {
+
+        $req_fields = array('regno','type','yom','startdate');
+
+                foreach ($req_fields as $field) {
+        
+                    if(empty(trim($_POST[$field]))) {
+                     $errors [] = $field. 'is required.';   
+                    }
+        
+                }
+                if(empty($errors)) {
+                    //no error //adding new records
+                    $regno = mysqli_real_escape_string($connection, $_POST['regno']);
+                    $type = mysqli_real_escape_string($connection, $_POST['type']);
+                    $yom = mysqli_real_escape_string($connection, $_POST['yom']);
+                    $startdate = mysqli_real_escape_string($connection, $_POST['startdate']);
+
+                    $query = "INSERT INTO vehicle (Reg_No ,Car_type ,YOM ,Started_date )
+                                 VALUES ('{$regno}','{$type}','{$yom}','{$startdate}')";
+
+                    $result = mysqli_query($connection, $query);
+
+                    if($result) {
+                        
+                        echo '<script>  window.alert("Successfuly added the vehicle."); </script>'; 
+                        header("Location:fleet.php");
+                        
+                    }else {
+                        echo '<script>  window.alert("Database query failed!"); </script>';
+                    }
+
+
+                }else {
+                    echo '<script>  window.alert("You have empty fields!"); </script>';
+                }
+
+    }else {
+        
+    }
+
+    
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -117,13 +172,19 @@
                                         <form enctype="multipart/form-data" method="post" id="add-fleet-form">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Register Number</label>
-                                                <input type="text" name="registerNumber" class="form-control" id="exampleInputEmail"
+                                                <input type="text" name="regno" class="form-control" id="exampleInputEmail"
                                                        aria-describedby="emailHelp" placeholder="Register Number">
                                             </div>
+
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Vehicle Type</label>
-                                                <input type="text" class="form-control" name="vehicleType" id="exampleInputEmail1"
-                                                       aria-describedby="emailHelp" placeholder="Vehicle Type">
+                                                <div class="form-group">
+                                                <select class="form-control" id="sel1" name="type">
+                                                  <option>Select Type</option>
+                                                  <option value ="Light weight">Light weight</option>
+                                                  <option value = "Heavy Duty">Heavy-Duty</option>
+                                                </select>
+                                              </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Year Of Manufacture</label>
@@ -132,27 +193,12 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Started-date</label>
-                                                <input type="datetime" name="started-date" class="form-control" id="exampleInputEmail"
+                                                <input type="date" name="startdate" class="form-control" id="exampleInputEmail"
                                                        aria-describedby="emailHelp" placeholder="Started date">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Remove-date</label>
-                                                <input type="datetime" name="removedate" class="form-control" id="exampleInputEmail"
-                                                       aria-describedby="emailHelp" placeholder="Remove date">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Image</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" name="imageFleet" accept="image/*"
-                                                           id="inputGroupFile01"
-                                                           aria-describedby="inputGroupFileAddon01">
-                                                    <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                        file</label>
-                                                </div>
-                                            </div>
 
 
-                                            <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+                                            <button name ="submit" type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
@@ -167,65 +213,47 @@
                         <article class="topcontent">
                             <div class="container" id="fleet-container">
 
-                                <div class="row">
-                                    <div class="col-md-3 text-center">
-                                        <div class="well dash-box"
-                                             style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
-                                            <h2 class="text-center"><img src="img/f1.jpg" class="img-thumbnail"></h2>
-                                            <h5 class="text-center">Mitsubishi Lancer Evolution IX</h5>
-                                            <button type="button" class="btn btn-primary btn-sm ">View Details</button>
-                                                                <div class="modal" role="dialog" id="login-modal">
-                                                <div class="modal-dialog text-left">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header text-center">
-                                                            <h4 class="modal-title"><i class="fas fa-car"></i> Add Vehicle</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- modal -->
-                                        </div>
+                            <div class="row">
+                       
+                    <?php
+                        $vehicle = "SELECT * FROM vehicle";
+                        
+                            $result_set = mysqli_query($connection, $vehicle);
+                        
+                            if($result_set) {
+                                if(mysqli_num_rows($result_set)>0) {
+                                    
+                                    $count=mysqli_num_rows($result_set);
+                        
+                                    for($x=1; $x<=$count; $x++) {
 
 
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-3 text-center">
-                                            <div class="well dash-box"
-                                                 style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
-                                                <h2 class="text-center"><img src="img/f2.jpg" class="img-thumbnail">
-                                                </h2>
-                                                <h5 class="text-center">Toyota Supra MK4</h5>
-                                                <button type="button" class="btn btn-primary btn-sm ">View Details
-                                                </button>
-                                            </div>
+                                        $vehicle_no = "SELECT * FROM vehicle WHERE Vehicle_ID='{$x}' AND Car_type='Light weight' LIMIT 1";
+                                        $result_name = mysqli_query($connection, $vehicle_no);
 
+                                        if(mysqli_num_rows($result_name)>0) {
+                                            $vehicle=mysqli_fetch_assoc($result_name);
+                                            $_SESSION['regno']= $vehicle['Reg_No'];
+                                        
+                                        
+                                            echo "<div class='col-sm-4'>
+                                                    <article class='topcontent'>
+                                                        <h4 id='studentName'>";
+                                            echo $_SESSION['regno'];
+                                            echo "</h4>
+                                                        <hr>
+                                                        <h2><i class=\"fas fa-car\"></i></h2>
+                                                        <br>
+                                                        <a class='btn btn-secondary' href=\"vProfile.php?vehicle_id={$vehicle['Vehicle_ID']}\" role='button'>view profile</a>
+                                                    </article>   
+                                                </div>";
+                                        }
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-5"></div>
-                                            <div class="col-md-3 text-center">
-                                                <div class="well dash-box"
-                                                     style="height:280px;width:210px;padding-left:10px;padding-right:10px;">
-                                                    <h2 class="text-center"><img src="img/f4.jpg" class="img-thumbnail">
-                                                    </h2>
-                                                    <h5 class="text-center">Nissan Skyline GT-R R34</h5>
-                                                    <button type="button" class="btn btn-primary btn-sm ">View Details
-                                                    </button>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    }
+                        
+                                }
+                            }
+                    ?>
 
                             </div>
                         </article>
@@ -238,12 +266,56 @@
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading main-color-bg">
-                                    <h4 class="panel-title">Light weight vehicles</h4>
+                                    <h4 class="panel-title">Heavy Duty vehicles</h4>
                                 </div>
                                 <div class="panel-body">
                                     <br>
                                     <article class="topcontent">
-                                        ddfkjberjbfjwhbrgkrbgkebg
+                                    <div class="container" id="fleet-container">
+
+                            <div class="row">
+                       
+                    <?php
+                        $vehicle = "SELECT * FROM vehicle";
+                        
+                            $result_set = mysqli_query($connection, $vehicle);
+                        
+                            if($result_set) {
+                                if(mysqli_num_rows($result_set)>0) {
+                                    
+                                    $count=mysqli_num_rows($result_set);
+                        
+                                    for($x=1; $x<=$count; $x++) {
+
+
+                                        $vehicle_no = "SELECT * FROM vehicle WHERE Vehicle_ID='{$x}' AND Car_type='Heavy Duty' LIMIT 1";
+                                        $result_name = mysqli_query($connection, $vehicle_no);
+
+                                        if(mysqli_num_rows($result_name)>0) {
+                                            $vehicle=mysqli_fetch_assoc($result_name);
+                                            $_SESSION['regno']= $vehicle['Reg_No'];
+                                        
+                                        
+                                            echo "<div class='col-sm-4'>
+                                                    <article class='topcontent'>
+                                                        <h4 id='studentName'>";
+                                            echo $_SESSION['regno'];
+                                            echo "</h4>
+                                                        <hr>
+                                                        <h2><i class=\"fas fa-car\"></i></h2>
+                                                        <br>
+                                                        <a class='btn btn-secondary' href=\"vProfile.php?vehicle_id={$vehicle['Vehicle_ID']}\" role='button'>view profile</a>
+                                                    </article>   
+                                                </div>";
+                                        }
+
+                                    }
+                        
+                                }
+                            }
+                    ?>
+
+                            </div>
                                     </article>
                                 </div>
 
