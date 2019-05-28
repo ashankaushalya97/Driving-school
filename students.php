@@ -6,6 +6,7 @@
 <?php 
 
     $errors =array();
+    $count =0;
 
     if(isset($_POST['submit'])) {
 
@@ -32,7 +33,10 @@
                     $result = mysqli_query($connection, $query);
 
                     if($result) {
-                        echo '<script>  window.alert("Successfuly added the member."); </script>';    
+                        echo '<script>  window.alert("Successfuly added the member."); </script>'; 
+                        
+                        
+
                     }else {
                         echo '<script>  window.alert("Database query failed!"); </script>';
                     }
@@ -43,6 +47,8 @@
                 }
 
     }
+
+    
 
 ?>
 
@@ -177,8 +183,50 @@
                                     </div>
                         </div>
                 </article>
+                <div class="row">
+                
+                    <?php
+                        $student = "SELECT * FROM member";
+                        
+                            $result_set = mysqli_query($connection, $student);
+                        
+                            if($result_set) {
+                                if(mysqli_num_rows($result_set)>0) {
+                                    
+                                    $count=mysqli_num_rows($result_set);
+                        
+                                    for($x=1; $x<=$count; $x++) {
 
-                   <div class="row">
+
+                                        $student_name = "SELECT * FROM member WHERE Member_ID='{$x}' LIMIT 1";
+                                        $result_name = mysqli_query($connection, $student_name);
+
+                                        if(mysqli_num_rows($result_name)>0) {
+                                            $user=mysqli_fetch_assoc($result_name);
+                                            $_SESSION['name']= $user['Name'];
+                                        
+                                        
+                                            echo "<div class='col-sm-4'>
+                                                    <article class='topcontent'>
+                                                        <h4 id='studentName'>";
+                                            echo $_SESSION['name'];
+                                            echo "</h4>
+                                                        <hr>
+                                                        <h2><i class='fas fa-user'></i></h2>
+                                                        <br>
+                                                        <a class='btn btn-secondary' href='sProfile.php' role='button'>view profile</a>
+                                                    </article>   
+                                                </div>";
+                                        }
+
+                                    }
+                        
+                                }
+                            }
+                    ?>
+                </div>
+
+                   <!-- <div class="row">
                        <div class="col-sm-4">
                         <article class="topcontent">
                                 <h4 id="studentName" value="">Name1</h4>
@@ -188,25 +236,7 @@
                                 <a class="btn btn-secondary" href="sProfile.php" role="button">view profile</a>
                         </article>   
                        </div>
-                       <div class="col-sm-4">
-                       <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <button type="button" class="btn btn-secondary">View profile</button>
-                        </article> 
-                       </div>
-                       <div class="col-sm-4">
-                        <article class="topcontent">
-                                <h4 id="studentName" value="">Name1</h4>
-                                <hr>
-                                <img src="#" class="profile">
-                                <br>
-                                <button type="button" class="btn btn-secondary">View profile</button>
-                        </article> 
-                       </div>
-                   </div>
+                   </div> -->
                    <br>
                   <
                        
