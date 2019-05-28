@@ -1,3 +1,59 @@
+<?php session_start(); ?>
+<?php 
+    require_once('inc/connection.php');
+?>
+
+<?php 
+
+    $errors =array();
+    $count =0;
+
+
+    if(isset($_POST['submit'])) {
+
+        $req_fields = array('id','type','amount','method','date');
+
+                foreach ($req_fields as $field) {
+        
+                    if(empty(trim($_POST[$field]))) {
+                     $errors [] = $field. 'is required.';   
+                    }
+        
+                }
+                if(empty($errors)) {
+                    //no error //adding new records
+                    $id = mysqli_real_escape_string($connection, $_POST['id']);
+                    $type = mysqli_real_escape_string($connection, $_POST['type']);
+                    $amount = mysqli_real_escape_string($connection, $_POST['amount']);
+                    $method = mysqli_real_escape_string($connection, $_POST['method']);
+                    $date = mysqli_real_escape_string($connection, $_POST['date']);
+
+                    $query = "INSERT INTO payment (Ref,Amount,Method,Date,Member_ID )
+                                 VALUES ('{$type}','{$amount}','{$method}','{$date}','{$id}')";
+
+                    $result = mysqli_query($connection, $query);
+
+                    if($result) {
+                        
+                        echo '<script>  window.alert("Successfuly added the payments."); </script>'; 
+                        
+                        
+                    }else {
+                        echo '<script>  window.alert("Database query failed!"); </script>';
+                    }
+
+
+                }else {
+                    echo '<script>  window.alert("You have empty fields!"); </script>';
+                }
+
+    }else {
+        
+    }
+
+    
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -92,7 +148,7 @@
                                     </div>
                                     <div>
                         <article class="topcontent">                
-                        <form >
+                        <form method="post">
                             <div class="row">
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-3">
@@ -101,12 +157,46 @@
                                 <div class="col-1"></div>
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-5">
-                                    <div class="dropdown" id="cmbCreditSupplier">
-                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropDownCreditSupplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Student</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropDownCreditSupplier" id="creditsupplierList">
-                                            <p class="dropdown-item" >Student</p>
+                                <div class="form-group">
+                                            <select class="form-control" id="sel1" name="id">
+                                                <option>Name</option>
+                                                
+                                                <?php
+                                                    $vehicle = "SELECT * FROM member";
+                        
+                                                     $result_set = mysqli_query($connection, $vehicle);
+                        
+                                                      if($result_set) {
+                                                         if(mysqli_num_rows($result_set)>0) {
+                                    
+                                                           $count=mysqli_num_rows($result_set);
+                        
+                                                              for($x=1; $x<=$count; $x++) {
+
+
+                                                                $student = "SELECT * FROM member WHERE Member_ID='{$x}' LIMIT 1";
+                                                                 $result_name = mysqli_query($connection, $student);
+
+                                                              if(mysqli_num_rows($result_name)>0) {
+                                                                $studentd=mysqli_fetch_assoc($result_name);
+                                        
+                                        
+                                                               echo  "<option value = '";
+                                                               echo $studentd['Member_ID'];
+                                                               echo "'>";
+                                                               echo $studentd['Name'];
+                                                               echo "</option>";
+                                                            }
+
+                                                        }   
+                        
+                                                      }
+                                                     }
+                                                    ?>
+                                                
+                                            
+                                            </select>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="col-1"></div>
                             </div>
@@ -119,13 +209,16 @@
                                 <div class="col-1"></div>
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-5">
-                                    <div class="dropdown" id="cmbCtype">
-                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropDownCreditType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Credit Type</button>
-                                        <div class="dropdown-menu" aria-labelledby="dropDownCreditType" id="credittypeList">
-                                            <p class="dropdown-item" >Credit Type</p>
+                                 
+                                        <div class="form-group">
+                                            <select class="form-control" id="sel1" name="type">
+                                                <option>Select Type</option>
+                                                <option value ="Cash">Cash</option>
+                                                <option value = "Debit card">Debit card</option>
+                                            </select>
                                         </div>
                                     </div>
-                                </div>
+                                
                                 <div class="col-1"></div>
                             </div>
                             <br>
@@ -137,7 +230,7 @@
                                 <div class="col-1"></div>
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-5">
-                                    <input class="form-control" type="text" name="txtAmount" id="txtAmount" placeholder="Amount">
+                                    <input class="form-control" type="text" name="amount" id="txtAmount" placeholder="Amount">
                                 </div>
                                 <div class="col-1"></div>
                             </div>
@@ -150,7 +243,7 @@
                                 <div class="col-1"></div>
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-5">
-                                    <input class="form-control" type="text" name="txtMethod" id="txtMethod" placeholder="Method">
+                                    <input class="form-control" type="text" name="method" id="txtMethod" placeholder="Method">
                                 </div>
                                 <div class="col-1"></div>
                             </div>
@@ -163,7 +256,7 @@
                                 <div class="col-1"></div>
                                 <div class="col-1"></div>
                                 <div class="col-10 col-md-5">
-                                    <input class="form-control" type="date" name="date" id="date">
+                                    <input class="form-control" name="date"type="date" name="date" id="date">
                                 </div>
                                 <div class="col-1"></div>
                             </div>
@@ -171,7 +264,7 @@
                             <div class="row">
                                 <div class="col-3 col-md-4"></div>
                                 <div class="col-6 col-md-4">
-                                    <button type="button" id="btnAddCredit" class="btn btn-success">Submit</button>
+                                    <button name="submit" type="submit" id="btnAddCredit" class="btn btn-success">Submit</button>
                                     <button type="button" class="btn btn-light">Reset</button>
                                 </div>
                                 <div class="col-3 col-md-4"></div>
